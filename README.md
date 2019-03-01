@@ -2,6 +2,15 @@
 
 # Urban-Sound-Classification-using-AWS-Services
 This work is the continuous of "Urban-Sound-Classification-on-Raspberry". In this case I have used as usual Raspebery pi for recording sounds and then saved music  (as txt) in an bucket on S3 of Amazon. Succefully several python's call for run SW on EC2 for classification. 
+A multilayer perceptron (MLP) was used for training with 2 hidden layer. 
+## Idea
+The idea for this work as described previously mentioned is recording urban sound with Raspberry and make classifications using trained model. 
+Raspberry will record audio (0.01ms) , save it in a file and upload on S3 Buckets. 
+Now, the audio will be stored on S3 in a txt file as array of numbers. 
+Raspberry will make a ssh connection on AWS.EC2 to run Classificator.py trained previously and execute code. 
+On EC2, before to make feature extraction, the Classificator.py make download from S3, load it in a numpy array. 
+Output (the belonging class represented as a number) returns on Raspberry.
+
 ## Build the project
 The building of project follow same procedure of previously work (https://github.com/LuigiRussoDev/Urban-Sound-Classification-on-Raspberry/blob/master/README.md). You need same Python libraries described previously. 
 
